@@ -266,6 +266,8 @@
     <div class="loading">Inking the pages...</div>
   </main>
 
+  <div id="sentinel" style="height: 20px;"></div>
+
   <footer>
     <div class="footer-content">
       <div class="discord-info">
@@ -279,17 +281,26 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
     let allPoems = [];
+    let activeList = [];
+    let currentIndex = 0;
+    const PAGE_SIZE = 10;
+    const container = document.getElementById('main-content');
+    const sentinel = document.getElementById('sentinel');
 
     async function loadPoems() {
-      const container = document.getElementById('main-content');
       try {
         const response = await fetch('poems.json');
         if (!response.ok) throw new Error('Failed to load poems');
 
         const data = await response.json();
         allPoems = data.poems;
-        renderPoems(allPoems);
+        activeList = allPoems;
+
+        container.innerHTML = '';
+        renderNextBatch();
+        setupObserver();
 
       } catch (error) {
         console.error('Error loading poems:', error);
@@ -297,42 +308,57 @@
       }
     }
 
-    function renderPoems(poemsToRender) {
-      const container = document.getElementById('main-content');
-      container.innerHTML = '';
+    function renderNextBatch() {
+      const fragment = document.createDocumentFragment();
+      const nextBatch = activeList.slice(currentIndex, currentIndex + PAGE_SIZE);
 
-      if (poemsToRender.length === 0) {
+      if (nextBatch.length === 0 && currentIndex === 0) {
         container.innerHTML = '<div class="loading">No ink found for that search...</div>';
         return;
       }
 
-      poemsToRender.forEach(poem => {
+      nextBatch.forEach(poem => {
         const article = document.createElement('article');
         article.className = 'post';
-
         const formattedContent = poem.content.replace(/\n/g, '<br>');
 
         article.innerHTML = `
-                    <h2>${poem.title}</h2>
-                    <div class="poem-body">${formattedContent}</div>
-                    <div class="expand-hint">unfold entry →</div>
-                `;
+          <h2>${poem.title}</h2>
+          <div class="poem-body">${formattedContent}</div>
+          <div class="expand-hint">unfold entry →</div>
+        `;
 
         article.addEventListener('click', () => {
           article.classList.toggle('expanded');
         });
 
-        container.appendChild(article);
+        fragment.appendChild(article);
       });
+
+      container.appendChild(fragment);
+      currentIndex += PAGE_SIZE;
+    }
+
+    function setupObserver() {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && currentIndex < activeList.length) {
+          renderNextBatch();
+        }
+      }, { rootMargin: '200px' });
+
+      observer.observe(sentinel);
     }
 
     document.getElementById('search-input').addEventListener('input', (e) => {
       const term = e.target.value.toLowerCase();
-      const filtered = allPoems.filter(poem =>
+      activeList = allPoems.filter(poem =>
         poem.title.toLowerCase().includes(term) ||
         poem.content.toLowerCase().includes(term)
       );
-      renderPoems(filtered);
+
+      container.innerHTML = '';
+      currentIndex = 0;
+      renderNextBatch();
     });
 
     loadPoems();
