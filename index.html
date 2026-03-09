@@ -497,9 +497,62 @@
     }
 
     .theme-toggle svg,
+    .audio-toggle svg,
     .back-to-top svg {
       width: 20px;
       height: 20px;
+    }
+
+    .audio-toggle {
+      position: fixed;
+      top: 6rem;
+      right: 2rem;
+      z-index: 1000;
+      background: var(--bg-paper);
+      border: 1px solid var(--border-color);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-color);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: var(--transition-smooth);
+    }
+
+    .audio-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    .ink-trail {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      background: var(--text-primary);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.15;
+      transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    }
+
+    .poem-card.expanded .poem-content {
+      animation: inkSettle 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+
+    @keyframes inkSettle {
+      0% {
+        filter: blur(3px);
+        opacity: 0.5;
+      }
+
+      100% {
+        filter: blur(0px);
+        opacity: 1;
+      }
     }
 
     .back-to-top {
@@ -564,16 +617,114 @@
       width: 16px;
       height: 16px;
     }
+
+    /* Entrance Overlay (Poetic Dialog) */
+    #entrance-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), visibility 1s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [data-theme="dark"] #entrance-overlay {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    #entrance-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .audio-popup-card {
+      background: var(--bg-paper);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 3rem 4rem;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      max-width: 90vw;
+      width: 500px;
+    }
+
+    .audio-popup-card p {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--text-primary);
+      margin: 0 0 2.5rem;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .audio-popup-actions {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .audio-btn {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--text-primary);
+      background: transparent;
+      border: 1px solid var(--border-color);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      transition: var(--transition-smooth);
+      text-transform: lowercase;
+    }
+
+    .audio-btn:hover {
+      background: var(--accent-color);
+      color: white;
+      border-color: var(--accent-color);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
   </style>
 </head>
 
 <body>
+
+  <!-- Entrance Overlay -->
+  <div id="entrance-overlay">
+    <div class="audio-popup-card">
+      <p>the ink speaks louder with a melody...<br>shall we play some ambient sounds?</p>
+      <div class="audio-popup-actions">
+        <button class="audio-btn" id="audio-yes-btn">play melody</button>
+        <button class="audio-btn" id="audio-no-btn">read in silence</button>
+      </div>
+    </div>
+  </div>
 
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode">
     <!-- Sun icon for dark mode (show when on dark), Moon icon for light mode (show when on light) -->
     <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
       stroke-linejoin="round">
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    </svg>
+  </button>
+
+  <button class="audio-toggle" id="audio-toggle" aria-label="Toggle Ambient Audio">
+    <svg id="audio-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <!-- Muted by default -->
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <line x1="23" y1="9" x2="17" y2="15"></line>
+      <line x1="17" y1="9" x2="23" y2="15"></line>
     </svg>
   </button>
 
@@ -810,6 +961,76 @@
     };
 
     init();
+
+    // Ambient Audio Logic
+    const ambientAudio = new Audio('bg.mp3');
+    ambientAudio.loop = true;
+    ambientAudio.volume = 0.4;
+    const audioToggle = document.getElementById('audio-toggle');
+    const audioIcon = document.getElementById('audio-icon');
+    let isPlaying = false;
+
+    audioToggle.onclick = () => {
+      if (isPlaying) {
+        ambientAudio.pause();
+        audioIcon.innerHTML = `<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line>`;
+      } else {
+        ambientAudio.play().catch(e => console.log("Ambient audio blocked."));
+        audioIcon.innerHTML = `<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>`;
+      }
+      isPlaying = !isPlaying;
+    };
+
+    // Auto-play ambient audio on entrance
+    const entranceOverlay = document.getElementById('entrance-overlay');
+    const audioYesBtn = document.getElementById('audio-yes-btn');
+    const audioNoBtn = document.getElementById('audio-no-btn');
+
+    audioYesBtn.onclick = () => {
+      entranceOverlay.classList.add('hidden');
+      if (!isPlaying) {
+        ambientAudio.play().then(() => {
+          isPlaying = true;
+          audioIcon.innerHTML = `<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>`;
+        }).catch(e => console.log("Audio play blocked."));
+      }
+    };
+
+    audioNoBtn.onclick = () => {
+      entranceOverlay.classList.add('hidden');
+    };
+
+    // Fading Ink Trail Cursor Logic
+    let lastX = 0, lastY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      const dx = e.clientX - lastX;
+      const dy = e.clientY - lastY;
+
+      // Drop ink every 20px to avoid DOM bloat but keep trail smooth
+      if (Math.hypot(dx, dy) > 20) {
+        lastX = e.clientX;
+        lastY = e.clientY;
+
+        const drop = document.createElement('div');
+        drop.className = 'ink-trail';
+        drop.style.left = e.clientX + 'px';
+        drop.style.top = e.clientY + 'px';
+
+        document.body.appendChild(drop);
+
+        // Force reflow to ensure transition starts from scale(1)
+        void drop.offsetWidth;
+
+        drop.style.transform = 'translate(-50%, -50%) scale(0.1)';
+        drop.style.opacity = '0';
+
+        // Cleanup
+        setTimeout(() => {
+          drop.remove();
+        }, 600);
+      }
+    });
   </script>
 </body>
 
