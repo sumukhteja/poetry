@@ -216,6 +216,39 @@
       opacity: 0.5;
       padding-top: 4rem;
     }
+
+    /* Search Styling */
+    .search-container {
+      margin-top: 2rem;
+      position: relative;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #search-input {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: none;
+      background: transparent;
+      border-bottom: 1px solid rgba(125, 110, 93, 0.2);
+      font-family: var(--hand);
+      font-size: 1.2rem;
+      text-align: center;
+      color: var(--text-main);
+      transition: var(--transition);
+      outline: none;
+    }
+
+    #search-input:focus {
+      border-bottom-color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    #search-input::placeholder {
+      color: var(--secondary);
+      opacity: 0.5;
+    }
   </style>
 </head>
 
@@ -223,7 +256,10 @@
 
   <header>
     <h1>Optimistic Lad</h1>
-    <p class="description">a collection of raw field notes.</p>
+    <p class="description">poetry</p>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="search through the ink..." autocomplete="off">
+    </div>
   </header>
 
   <main id="main-content">
@@ -243,6 +279,7 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    let allPoems = [];
 
     async function loadPoems() {
       const container = document.getElementById('main-content');
@@ -251,31 +288,52 @@
         if (!response.ok) throw new Error('Failed to load poems');
 
         const data = await response.json();
-        container.innerHTML = '';
+        allPoems = data.poems;
+        renderPoems(allPoems);
 
-        data.poems.forEach(poem => {
-          const article = document.createElement('article');
-          article.className = 'post';
-
-          const formattedContent = poem.content.replace(/\n/g, '<br>');
-
-          article.innerHTML = `
-                        <h2>${poem.title}</h2>
-                        <div class="poem-body">${formattedContent}</div>
-                        <div class="expand-hint">unfold entry →</div>
-                    `;
-
-          article.addEventListener('click', () => {
-            article.classList.toggle('expanded');
-          });
-
-          container.appendChild(article);
-        });
       } catch (error) {
         console.error('Error loading poems:', error);
         container.innerHTML = '<div class="loading">The journal was misplaced. Please return later.</div>';
       }
     }
+
+    function renderPoems(poemsToRender) {
+      const container = document.getElementById('main-content');
+      container.innerHTML = '';
+
+      if (poemsToRender.length === 0) {
+        container.innerHTML = '<div class="loading">No ink found for that search...</div>';
+        return;
+      }
+
+      poemsToRender.forEach(poem => {
+        const article = document.createElement('article');
+        article.className = 'post';
+
+        const formattedContent = poem.content.replace(/\n/g, '<br>');
+
+        article.innerHTML = `
+                    <h2>${poem.title}</h2>
+                    <div class="poem-body">${formattedContent}</div>
+                    <div class="expand-hint">unfold entry →</div>
+                `;
+
+        article.addEventListener('click', () => {
+          article.classList.toggle('expanded');
+        });
+
+        container.appendChild(article);
+      });
+    }
+
+    document.getElementById('search-input').addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      const filtered = allPoems.filter(poem =>
+        poem.title.toLowerCase().includes(term) ||
+        poem.content.toLowerCase().includes(term)
+      );
+      renderPoems(filtered);
+    });
 
     loadPoems();
   </script>
