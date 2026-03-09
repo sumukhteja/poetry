@@ -741,10 +741,6 @@
               };
             } else {
               card.style.cursor = 'default';
-              card.onclick = () => {
-                paperSound.currentTime = 0.3;
-                paperSound.play().catch(e => console.log("Audio play blocked by browser."));
-              };
             }
 
             listElement.appendChild(card);
