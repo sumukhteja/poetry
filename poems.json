@@ -119,6 +119,46 @@
             "id": "belong-with-me",
             "title": "belong with me",
             "content": "I will to take you into my arms\nforever will you belong with me?\nwill you come closer to my ribs\nlisten as my heart beats?\nevery beat is a chant of your name\noh goddess, can I worship you every season?"
+        },
+        {
+            "id": "carry",
+            "title": "carry",
+            "content": "flirt with the wind\nsay your wishes it shall carry them to your love\npray to the sun\nit shall shine your love on her everyday\nask for the rain\nto shower on her and show her the colors of your rainbow\nso she will giggle someday"
+        },
+        {
+            "id": "do-not",
+            "title": "do not",
+            "content": "do not over step your place\ndo not over play your game\ndo not over text in her DMs\none day, you shall be left with nothing to say"
+        },
+        {
+            "id": "flashback",
+            "title": "flashback",
+            "content": "I had a thousand words to say\nthen I saw her\nI forgot not just my words\nbut even how to speak\nI had a thousand stories to share\nI spent time with her\nwe made memories\nwith all our moments"
+        },
+        {
+            "id": "pick-her-up",
+            "title": "pick her up",
+            "content": "She fell for my flirts\nso I picked her up as I fell for her lies"
+        },
+        {
+            "id": "whisper",
+            "title": "whisper",
+            "content": "I was the silence before the thunder,\nshe was the whisper of the storm."
+        },
+        {
+            "id": "trees",
+            "title": "trees",
+            "content": "the trees burn each day\njust as my heart blazes each night\nlonging for her love"
+        },
+        {
+            "id": "gardener",
+            "title": "gardener",
+            "content": "fight me, and you’ll return to the soil\nfor I am a gardener who grows flowers"
+        },
+        {
+            "id": "fate",
+            "title": "fate",
+            "content": "oh fate, you charmed me at the start\nwhy now do you chain my heart?"
         }
     ]
 }
