@@ -1,0 +1,34 @@
+{
+    "poems": [
+        {
+            "id": "the-return",
+            "title": "the return",
+            "content": "as each of my day passes through,\nfor you, my craving peaks,\nI wait, to receive your love,\nI hope it’ll come back to me one day."
+        },
+        {
+            "id": "paradise",
+            "title": "paradise",
+            "content": "we belong to none but each other,\nalways in each others arms,\njoin me in my space,\nlet’s go to our paradise."
+        },
+        {
+            "id": "grace",
+            "title": "grace",
+            "content": "I fell for you even in my dreams,\nonly to rise alone in silent seams,\nI miss all your whims, your quite grace,\na touch that vanished without a trace."
+        },
+        {
+            "id": "downhill",
+            "title": "downhill",
+            "content": "she was my maze, I was her craze,\nmy life, once was pristine on the hill,\nfrom there on, it was only downhill,\nvape was my escape,\nand darkness, my only light,\nI shook hands with my shadow,\ntrapped in my own sorrow."
+        },
+        {
+            "id": "pain-au-chocolat",
+            "title": "pain au chocolat",
+            "content": "she’s fluffy like a croissant,\nso I ate her with chocolat."
+        },
+        {
+            "id": "my-goddess",
+            "title": "my goddess",
+            "content": "she was as beautiful as the goddess,\nI sinned with the her in the night,\nthen I knelt to pray in the day."
+        }
+    ]
+}
