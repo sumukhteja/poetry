@@ -613,13 +613,12 @@
     <span class="footer-title">Optimistic Lad</span>
 
     <div class="footer-info">
-      <a href="https://discord.gg/yourinvite" class="message-me-btn" target="_blank">
+      <button class="message-me-btn" onclick="copyUsername(this)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
         </svg>
-        message me
-      </a>
-      <a href="#" class="discord-badge">discord: @th3garrison</a>
+        <span class="btn-text">message me</span>
+      </button>
     </div>
 
     <p class="copyright">
@@ -800,6 +799,20 @@
     };
 
     init();
+
+    function copyUsername(btnElement) {
+      const username = "th3garrison";
+      navigator.clipboard.writeText(username).then(() => {
+        const span = btnElement.querySelector('.btn-text');
+        const originalText = span.textContent;
+        span.textContent = "copied id!";
+        setTimeout(() => {
+          span.textContent = originalText;
+        }, 2000);
+      }).catch(err => {
+        console.error("Failed to copy text: ", err);
+      });
+    }
   </script>
 </body>
 
