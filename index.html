@@ -56,6 +56,7 @@
     }
 
     body {
+      cursor: url('cursor.svg'), auto;
       margin: 0;
       background-color: var(--bg-canvas);
       background-image:
@@ -229,7 +230,7 @@
       border: 1px solid var(--border-color);
       border-radius: 8px;
       position: relative;
-      cursor: pointer;
+      cursor: url('cursor.svg'), pointer;
       transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       perspective: 2000px;
       overflow: visible;
@@ -365,7 +366,7 @@
       background: transparent;
       border: 1px solid var(--border-color);
       padding: 0.6rem 1.2rem;
-      cursor: pointer;
+      cursor: url('cursor.svg'), pointer;
       font-family: inherit;
       font-size: 0.9rem;
       letter-spacing: 0.1em;
@@ -420,7 +421,7 @@
       transform: rotate(-3deg);
       display: inline-block;
       text-decoration: none;
-      cursor: pointer;
+      cursor: url('cursor.svg'), pointer;
     }
 
     .footer-poetic {
@@ -481,7 +482,7 @@
       width: 45px;
       height: 45px;
       border-radius: 50%;
-      cursor: pointer;
+      cursor: url('cursor.svg'), pointer;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -511,7 +512,7 @@
       width: 45px;
       height: 45px;
       border-radius: 50%;
-      cursor: pointer;
+      cursor: url('cursor.svg'), pointer;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -563,7 +564,7 @@
       width: 45px;
       height: 45px;
       border-radius: 50%;
-      cursor: pointer;
+      cursor: url('cursor.svg'), pointer;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -602,7 +603,7 @@
       transition: var(--transition-smooth);
       margin: 0;
       padding: 0;
-      cursor: pointer;
+      cursor: url('cursor.svg'), pointer;
     }
 
     .message-me-btn:hover {
@@ -679,7 +680,7 @@
       border: 1px solid var(--border-color);
       padding: 0.8rem 2rem;
       border-radius: 50px;
-      cursor: pointer;
+      cursor: url('cursor.svg'), pointer;
       letter-spacing: 0.05em;
       transition: var(--transition-smooth);
       text-transform: lowercase;
@@ -900,7 +901,7 @@
                 card.classList.toggle('expanded');
               };
             } else {
-              card.style.cursor = 'default';
+              card.style.cursor = "url('cursor.svg'), default";
             }
 
             listElement.appendChild(card);
