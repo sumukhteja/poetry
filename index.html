@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>optimisticlad</title>
+  <title>unposted letter</title>
   <meta name="description"
     content="A curated collection of poetry and field notes, presented in a minimalist, tactile digital archive.">
   <link rel="icon"
@@ -69,6 +69,17 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      animation: panningGrid 60s linear infinite;
+    }
+
+    @keyframes panningGrid {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 0 500px;
+      }
     }
 
     /* Subtle Grain Texture */
@@ -100,8 +111,13 @@
     }
 
     header {
-      padding: clamp(3rem, 10vh, 6rem) 1.5rem 3rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding: 0 1.5rem;
       max-width: 1000px;
       margin: 0 auto;
     }
@@ -380,68 +396,50 @@
     }
 
     footer {
-      padding: 10rem 1.5rem 8rem;
-      background: var(--bg-canvas);
+      padding: 12rem 1.5rem 8rem;
+      background: transparent;
       border-top: 1px solid var(--border-color);
       text-align: center;
       position: relative;
-      overflow: hidden;
     }
 
     .footer-flourish {
       width: 100%;
-      max-width: 250px;
+      max-width: 80px;
       margin: 0 auto 3rem;
-      display: block;
       color: var(--accent-color);
-      opacity: 0.2;
+      opacity: 0.4;
     }
 
-    .footer-title {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      letter-spacing: 0.5em;
-      text-transform: uppercase;
-      color: var(--accent-color);
-      margin-bottom: 3rem;
-      display: block;
-    }
-
-
-
-    .discord-badge {
-      font-family: 'Source Serif 4', serif;
-      font-style: italic;
-      font-size: 1.2rem;
+    .footer-signature {
+      font-family: var(--font-hand);
+      font-size: 3.5rem;
       color: var(--text-primary);
+      margin-bottom: 0.5rem;
+      opacity: 0.85;
+      transform: rotate(-3deg);
+      display: inline-block;
       text-decoration: none;
-      transition: var(--transition-smooth);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
+      cursor: pointer;
     }
 
-    .discord-badge:hover {
-      color: var(--accent-color);
-      transform: translateY(-2px);
-    }
-
-    .discord-badge::before,
-    .discord-badge::after {
-      content: '';
-      width: 20px;
-      height: 1px;
-      background: var(--accent-color);
-      opacity: 0.3;
+    .footer-poetic {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+      margin-bottom: 4rem;
+      opacity: 0.6;
     }
 
     .copyright {
-      font-family: var(--font-serif);
-      font-size: 0.8rem;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
       color: var(--text-secondary);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      opacity: 0.5;
+      letter-spacing: 0.2em;
+      text-transform: lowercase;
+      opacity: 0.4;
     }
 
     /* Empty/Loading states */
@@ -737,7 +735,7 @@
 
   <header>
     <a href="./" style="text-decoration: none; color: inherit;">
-      <h1 class="brand-title">optimistic lad</h1>
+      <h1 class="brand-title">unposted letter</h1>
     </a>
     <div class="author-info">
       <p class="user-meta">26/M</p>
@@ -774,17 +772,18 @@
 
   <footer>
     <div class="footer-flourish">
-      <svg viewBox="0 0 100 20" fill="none" stroke="currentColor">
-        <path d="M0 10 Q25 0 50 10 T100 10" stroke-width="0.5" opacity="0.5" />
-        <circle cx="50" cy="10" r="1.5" fill="currentColor" />
+      <svg viewBox="0 0 100 40" fill="none" stroke="currentColor">
+        <path d="M 0,20 C 30,20 30,0 50,0 C 70,0 70,20 100,20" stroke-width="0.5" opacity="0.5" />
+        <path d="M 0,20 C 30,20 30,40 50,40 C 70,40 70,20 100,20" stroke-width="0.5" opacity="0.5" />
+        <circle cx="50" cy="20" r="2.5" fill="currentColor" opacity="0.8" />
       </svg>
     </div>
 
-    <span class="footer-title">Optimistic Lad</span>
-
+    <a href="#" onclick="location.reload(); return false;" class="footer-signature">unposted letter</a>
+    <div class="footer-poetic">an archive of echoes and drifting ink.</div>
 
     <p class="copyright">
-      &copy; <span id="year"></span> All Rights Reserved.
+      &copy; <span id="year"></span> all rights reserved.
     </p>
   </footer>
 
