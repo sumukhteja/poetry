@@ -2,7 +2,7 @@
 
 *an archive of echoes.*
 
-*unposted letter* is a digital sanctuary for verses that were never meant to be sent—only felt. It is a curated collection of poetry and field notes, a space where drifting thoughts find a home in ink and silence.
+*unposted letter* is a digital sanctuary for verses that were never meant to be sent only felt. It is a curated collection of poetry and field notes, a space where drifting thoughts find a home in ink and silence.
 
 ## The Collection
 
