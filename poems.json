@@ -6,9 +6,9 @@
             "content": "she's as smooth as butter,\nshe melts to my words,\nand she, my hummingbird,\nshe is a thousand miles away,\nif only the breeze could carry me to her,\nI'd wear the wind like arms around her frame\n\nI wanna be cuffed, imprisoned in her ribs,\nis there a better devil to possess? I dare you.\nis there a better art than she?\n\nnever did I know I'd find someone this sweet,\nas sweet as the nectar,\neven the bees must be envious of this queen,\nfor she has ruined me, and I am hers to ruin."
         },
         {
-            "id": "the-return",
-            "title": "the return",
-            "content": "as each of my day passes through,\nfor you, my craving peaks,\nI wait, to receive your love,\nI hope it’ll come back to me one day."
+            "id": "his-love",
+            "title": "his love",
+            "content": "Let me listen to your voice, the one I rejoice\nDon’t let me make a choice, you’re my favorite noise\nI’m sorry but I can’t cut my boys\nSurely some of my scattered toys\nI’m up for the endless joys\nI promise I’ll keep you moist"
         },
         {
             "id": "paradise",
@@ -19,11 +19,6 @@
             "id": "grace",
             "title": "grace",
             "content": "I fell for you even in my dreams,\nonly to rise alone in silent seams,\nI miss all your whims, your quite grace,\na touch that vanished without a trace."
-        },
-        {
-            "id": "downhill",
-            "title": "downhill",
-            "content": "she was my maze, I was her craze,\nmy life, once was pristine on the hill,\nfrom there on, it was only downhill,\nvape was my escape,\nand darkness, my only light,\nI shook hands with my shadow,\ntrapped in my own sorrow."
         },
         {
             "id": "pain-au-chocolat",
@@ -66,11 +61,6 @@
             "content": "my will, strong as a hill\nI will write my story in yours\nand call it a crossover of life\na diamond ring up your finger\nan entire life, over to you"
         },
         {
-            "id": "clay",
-            "title": "clay",
-            "content": "you meddle with my heart like it’s clay\nwill you mold me in the shape you want me?"
-        },
-        {
             "id": "deep-inside",
             "title": "deep inside",
             "content": "I have a heart so empty yet heavy\nI dug deep to find myself\nall I see are traces of you\ncome here, come into my space\nbe the reason I open myself to you"
@@ -84,6 +74,16 @@
             "id": "lost-soul",
             "title": "lost soul",
             "content": "all souls lost and depressed\ntoday I come to make friends with my destiny\nwill you join hands, as we go through this together?\nI am but a lost soul\ndeep in the abyss there exists a pain that cannot be told but only felt\njoin me as I bridge it with your warmth"
+        },
+        {
+            "id": "the-return",
+            "title": "the return",
+            "content": "as each of my day passes through,\nfor you, my craving peaks,\nI wait, to receive your love,\nI hope it’ll come back to me one day."
+        },
+        {
+            "id": "downhill",
+            "title": "downhill",
+            "content": "she was my maze, I was her craze,\nmy life, once was pristine on the hill,\nfrom there on, it was only downhill,\nvape was my escape,\nand darkness, my only light,\nI shook hands with my shadow,\ntrapped in my own sorrow."
         },
         {
             "id": "void",
@@ -314,11 +314,6 @@
             "id": "a-poets-poem",
             "title": "a poets poem",
             "content": "I’m a poet in the making,\nWaiting to know when I’ll be made,\nWanting to know when I’ll make some bread,\nSky may meet the earth one day,\nbut I’ll never stop making my poems any day."
-        },
-        {
-            "id": "his-love",
-            "title": "his love",
-            "content": "Let me listen to your voice, the one I rejoice\nDon’t let me make a choice, you’re my favorite noise\nI’m sorry but I can’t cut my boys\nSurely some of my scattered toys\nI’m up for the endless joys\nI promise I’ll keep you moist"
         },
         {
             "id": "butter",
