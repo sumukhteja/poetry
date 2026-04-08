@@ -351,6 +351,42 @@
       display: none;
     }
 
+    /* Queen Special Card Styling */
+    .poem-card.queen-special {
+      background: #fff0f6;
+      border-color: rgba(255, 182, 193, 0.4);
+      box-shadow: 0 10px 30px rgba(255, 182, 193, 0.1);
+    }
+
+    .poem-card.queen-special .envelope-flap {
+      background: #fff0f6;
+      border-color: rgba(255, 182, 193, 0.4);
+    }
+
+    .poem-card.queen-special .poem-card-inner {
+      background: transparent;
+    }
+
+    .poem-card.queen-special h2 {
+      color: #d18ba1;
+      font-weight: 500;
+    }
+
+    [data-theme="dark"] .poem-card.queen-special {
+      background: #25181c;
+      border-color: rgba(255, 182, 193, 0.15);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    [data-theme="dark"] .poem-card.queen-special .envelope-flap {
+      background: #25181c;
+      border-color: rgba(255, 182, 193, 0.15);
+    }
+
+    [data-theme="dark"] .poem-card.queen-special h2 {
+      color: #ffb6c1;
+    }
+
     /* Pagination controls */
     .pagination {
       display: flex;
@@ -876,6 +912,9 @@
           pageItems.forEach((poem, index) => {
             const card = document.createElement('article');
             card.className = 'poem-card';
+            if (poem.id === 'my-queen') {
+              card.classList.add('queen-special');
+            }
             card.style.animationDelay = `${index * 0.05}s`;
 
             // Count actual visible lines (ignore trailing empty lines)
