@@ -17,6 +17,7 @@
       /* Palette: Sophisticated Neutrals (Light) */
       --bg-canvas: #fbfaf8;
       --bg-paper: #ffffff;
+      --bg-flap: #fdfdfd;
       --text-primary: #1a1a1a;
       --text-secondary: #5a5a5a;
       --accent-color: #726456;
@@ -37,6 +38,7 @@
     [data-theme="dark"] {
       --bg-canvas: #121212;
       --bg-paper: #1a1a1a;
+      --bg-flap: #222222;
       --text-primary: #e0e0e0;
       --text-secondary: #a0a0a0;
       --accent-color: #c4b5a6;
@@ -257,19 +259,31 @@
       left: 0;
       width: 100%;
       height: 60px;
-      background: var(--bg-paper);
+      background: var(--bg-flap);
       border: 1px solid var(--border-color);
       border-bottom: none;
       clip-path: polygon(0 0, 100% 0, 50% 100%);
       transform-origin: top;
       transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.8s;
       z-index: 10;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.05));
+    }
+    
+    .envelope-flap::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0,0,0,0.03) 0%, transparent 50%);
+      pointer-events: none;
     }
 
     .poem-card.expanded .envelope-flap {
       transform: rotateX(180deg);
-      box-shadow: none;
+      box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05); /* Shadow flipped */
       z-index: 1;
     }
 
@@ -359,8 +373,8 @@
     }
 
     .poem-card.queen-special .envelope-flap {
-      background: #fff0f6;
-      border-color: rgba(255, 182, 193, 0.4);
+      background: #fff5f8;
+      border-color: rgba(255, 182, 193, 0.6);
     }
 
     .poem-card.queen-special .poem-card-inner {
