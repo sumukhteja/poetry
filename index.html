@@ -47,6 +47,13 @@
       --grid-color: rgba(255, 255, 255, 0.04);
     }
 
+    [data-theme="dark"] .theme-toggle,
+    [data-theme="dark"] .audio-toggle,
+    [data-theme="dark"] .back-to-top {
+      background: rgba(40, 40, 40, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
     [data-theme="dark"] body::before {
       display: none;
     }
@@ -540,10 +547,12 @@
       top: 2rem;
       right: 2rem;
       z-index: 1000;
-      background: var(--bg-paper);
-      border: 1px solid var(--border-color);
-      width: 45px;
-      height: 45px;
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       cursor: url('cursor.svg'), pointer;
       display: flex;
@@ -570,8 +579,10 @@
       top: 6rem;
       right: 2rem;
       z-index: 1000;
-      background: var(--bg-paper);
-      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       width: 45px;
       height: 45px;
       border-radius: 50%;
@@ -622,8 +633,10 @@
       bottom: 2rem;
       right: 2rem;
       z-index: 1000;
-      background: var(--bg-paper);
-      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       width: 45px;
       height: 45px;
       border-radius: 50%;
