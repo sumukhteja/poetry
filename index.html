@@ -375,6 +375,11 @@
     .poem-card.queen-special .envelope-flap {
       background: #fff5f8;
       border-color: rgba(255, 182, 193, 0.6);
+      filter: drop-shadow(0 2px 2px rgba(255, 182, 193, 0.2)); /* Pinkish shadow */
+    }
+
+    .poem-card.queen-special .envelope-flap::after {
+      background: linear-gradient(180deg, rgba(255, 182, 193, 0.1) 0%, transparent 50%); /* Pink gradient */
     }
 
     .poem-card.queen-special .poem-card-inner {
@@ -395,6 +400,11 @@
     [data-theme="dark"] .poem-card.queen-special .envelope-flap {
       background: #2d1d22; /* Slightly lighter/rose-tinted flap for contrast */
       border-color: rgba(255, 182, 193, 0.3);
+      filter: drop-shadow(0 2px 3px rgba(255, 182, 193, 0.1));
+    }
+
+    [data-theme="dark"] .poem-card.queen-special .envelope-flap::after {
+      background: linear-gradient(180deg, rgba(255, 182, 193, 0.05) 0%, transparent 50%);
     }
 
     [data-theme="dark"] .poem-card.queen-special h2 {
