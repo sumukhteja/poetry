@@ -1,6 +1,6 @@
 # unposted letter
 
-*an archive of echoes.*
+*my poetry collection*
 
 *unposted letter* is a digital sanctuary for verses that were never meant to be sent only felt. It is a curated collection of poetry and field notes, a space where drifting thoughts find a home in ink and silence.
 
@@ -15,6 +15,3 @@ This archive is designed for slow reading and deep immersion:
 - **Ambient Resonance**: Subtle soundscapes to accompany the rhythm of the words.
 - **Ink and Light**: A visual journey that shifts between the clarity of paper and the depth of shadow.
 
----
-
-*For the words that linger long after the ink has dried.*
