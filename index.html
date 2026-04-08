@@ -9,7 +9,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DR856F0TKD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-DR856F0TKD');
@@ -276,9 +276,9 @@
       transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.8s;
       z-index: 10;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.05));
+      filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.05));
     }
-    
+
     .envelope-flap::after {
       content: "";
       position: absolute;
@@ -286,13 +286,14 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(180deg, rgba(0,0,0,0.03) 0%, transparent 50%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.03) 0%, transparent 50%);
       pointer-events: none;
     }
 
     .poem-card.expanded .envelope-flap {
       transform: rotateX(180deg);
-      box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05); /* Shadow flipped */
+      box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+      /* Shadow flipped */
       z-index: 1;
     }
 
@@ -384,11 +385,13 @@
     .poem-card.queen-special .envelope-flap {
       background: #fff5f8;
       border-color: rgba(255, 182, 193, 0.6);
-      filter: drop-shadow(0 2px 2px rgba(255, 182, 193, 0.2)); /* Pinkish shadow */
+      filter: drop-shadow(0 2px 2px rgba(255, 182, 193, 0.2));
+      /* Pinkish shadow */
     }
 
     .poem-card.queen-special .envelope-flap::after {
-      background: linear-gradient(180deg, rgba(255, 182, 193, 0.1) 0%, transparent 50%); /* Pink gradient */
+      background: linear-gradient(180deg, rgba(255, 182, 193, 0.1) 0%, transparent 50%);
+      /* Pink gradient */
     }
 
     .poem-card.queen-special .poem-card-inner {
@@ -401,13 +404,15 @@
     }
 
     [data-theme="dark"] .poem-card.queen-special {
-      background: #22161a; /* Deeper base */
+      background: #22161a;
+      /* Deeper base */
       border-color: rgba(255, 182, 193, 0.2);
       box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
     }
 
     [data-theme="dark"] .poem-card.queen-special .envelope-flap {
-      background: #2d1d22; /* Slightly lighter/rose-tinted flap for contrast */
+      background: #2d1d22;
+      /* Slightly lighter/rose-tinted flap for contrast */
       border-color: rgba(255, 182, 193, 0.3);
       filter: drop-shadow(0 2px 3px rgba(255, 182, 193, 0.1));
     }
