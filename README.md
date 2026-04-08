@@ -2,7 +2,7 @@
 
 *my poetry collection*
 
-*unposted letter* is a digital sanctuary for verses that were never meant to be sent only felt. It is a curated collection of poetry, a space where drifting thoughts find a home in ink and silence.
+*unposted letter* is a digital sanctuary for verses that were never meant to be sent, only felt. It is a curated collection of poetry, a space where drifting thoughts find a home in ink and silence.
 
 Every entry in this archive is a moment frozen in time. From the quiet introspection of midnight musings, the collection explores the delicate interplay between memory and emotion.
 
