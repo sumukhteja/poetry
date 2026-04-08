@@ -35,20 +35,21 @@
             "title": "grace",
             "content": "I fell for you even in my dreams,\nonly to rise alone in silent seams,\nI miss all your whims, your quiet grace,\na touch that vanished without a trace."
         },
-        {
-            "id": "pain-au-chocolat",
-            "title": "pain au chocolat",
-            "content": "she’s fluffy like a croissant,\nso I ate her with chocolat."
-        },
+
         {
             "id": "my-goddess",
             "title": "my goddess",
             "content": "she was as beautiful as the goddess,\nI sinned with her in the night,\nthen I knelt to pray in the day."
         },
         {
+            "id": "pillow",
+            "title": "pillow",
+            "content": "she was fluffy like my pillow,\ngot me breathing heavy on her,\nnow even my bed has feelings for me."
+        },
+        {
             "id": "cigarette",
             "title": "cigarette",
-            "content": "she was fluffy like my pillow,\ngot me breathing heavy on her,\nnow even my bed has feelings for me."
+            "content": "i smoked her like a cigarette,\nshe filled my lungs with fire,\nand on one fine day, she stopped my heart"
         },
         {
             "id": "life-as-we-live-it",
@@ -74,6 +75,11 @@
             "id": "deep-inside",
             "title": "deep inside",
             "content": "I have a heart so empty yet heavy\nI dug deep to find myself\nall I see are traces of you\ncome here, come into my space\nbe the reason I open myself to you"
+        },
+        {
+            "id": "pain-au-chocolat",
+            "title": "pain au chocolat",
+            "content": "she’s fluffy like a croissant,\nso I ate her with chocolat."
         },
         {
             "id": "acceptance",
