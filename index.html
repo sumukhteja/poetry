@@ -554,8 +554,10 @@
       top: 2rem;
       right: 2rem;
       z-index: 1000;
-      background: var(--bg-paper);
-      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       width: 45px;
       height: 45px;
       border-radius: 50%;
@@ -564,12 +566,26 @@
       align-items: center;
       justify-content: center;
       color: var(--accent-color);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
       transition: var(--transition-smooth);
+    }
+
+    [data-theme="dark"] .theme-toggle,
+    [data-theme="dark"] .audio-toggle,
+    [data-theme="dark"] .back-to-top {
+      background: rgba(0, 0, 0, 0.5);
+      border-color: rgba(255, 255, 255, 0.05);
     }
 
     .theme-toggle:hover {
       transform: scale(1.1);
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    [data-theme="dark"] .theme-toggle:hover,
+    [data-theme="dark"] .audio-toggle:hover,
+    [data-theme="dark"] .back-to-top:hover {
+      background: rgba(0, 0, 0, 0.7);
     }
 
     .theme-toggle svg,
@@ -584,8 +600,10 @@
       top: 6rem;
       right: 2rem;
       z-index: 1000;
-      background: var(--bg-paper);
-      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       width: 45px;
       height: 45px;
       border-radius: 50%;
@@ -594,12 +612,13 @@
       align-items: center;
       justify-content: center;
       color: var(--accent-color);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
       transition: var(--transition-smooth);
     }
 
     .audio-toggle:hover {
       transform: scale(1.1);
+      background: rgba(255, 255, 255, 0.8);
     }
 
     .ink-trail {
@@ -636,8 +655,10 @@
       bottom: 2rem;
       right: 2rem;
       z-index: 1000;
-      background: var(--bg-paper);
-      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       width: 45px;
       height: 45px;
       border-radius: 50%;
@@ -646,7 +667,7 @@
       align-items: center;
       justify-content: center;
       color: var(--accent-color);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
       transition: var(--transition-smooth);
       opacity: 0;
       visibility: hidden;
