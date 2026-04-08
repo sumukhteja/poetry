@@ -4,11 +4,7 @@
 
 *unposted letter* is a digital sanctuary for verses that were never meant to be sent only felt. It is a curated collection of poetry, a space where drifting thoughts find a home in ink and silence.
 
-## the collection
-
 Every entry in this archive is a moment frozen in time. From the quiet introspection of midnight musings, the collection explores the delicate interplay between memory and emotion.
-
-## the experience
 
 This archive is designed for slow reading and deep immersion:
 - **Envelopes of Verse**: Each poem is tucked away, waiting to be opened with intention.
