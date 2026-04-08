@@ -1,6 +1,11 @@
 {
     "poems": [
         {
+            "id": "mother",
+            "title": "mother",
+            "content": "Oh dear mother,\nTake me into your cradle, I am but your child,\nTake me home, I am but a part of your creation,\n\nOh divine mother,\nTake me into your lap, I am but your worshipper,\nTake me closer to your power, I am but a part of your existence,\n\nOh Shakti,\nTake me into your haven, I am but a part of your consciousness,\nTake me closer and closer, I only desire to be a part of you"
+        },
+        {
             "id": "my-queen",
             "title": "my queen",
             "content": "she's as smooth as butter,\nshe melts to my words,\nand she, my hummingbird,\nshe is a thousand miles away,\nif only the breeze could carry me to her,\nI'd wear the wind like arms around her frame\n\nI wanna be cuffed, imprisoned in her ribs,\nis there a better devil to possess? I dare you.\nis there a better art than she?\n\nnever did I know I'd find someone this sweet,\nas sweet as the nectar,\neven the bees must be envious of this queen,\nfor she has ruined me, and I am hers to ruin."
@@ -44,11 +49,6 @@
             "id": "game-of-life",
             "title": "game of life",
             "content": "I host my own game\nplay by my own rules\nand still lose them all"
-        },
-        {
-            "id": "depths",
-            "title": "depths",
-            "content": "guide me, to your subconscious\nyour depths, I want to unveil\noh beauty, I’m sure you inspire"
         },
         {
             "id": "connection",
@@ -289,11 +289,6 @@
             "id": "cobra",
             "title": "cobra",
             "content": "She’s so cute she’s king cobra\nShe’s a king always spitting venom, oh bruh\nWears a tiara, we both in Sahara\nLife’s a movie, idk the genre, it sure looks drama\nGod, pull me out of this and take me to Nirvana!"
-        },
-        {
-            "id": "mother",
-            "title": "mother",
-            "content": "Oh dear mother,\nTake me into your cradle, I am but your child,\nTake me home, I am but a part of your creation,\n\nOh divine mother,\nTake me into your lap, I am but your worshipper,\nTake me closer to your power, I am but a part of your existence,\n\nOh Shakti,\nTake me into your haven, I am but a part of your consciousness,\nTake me closer and closer, I only desire to be a part of you"
         },
         {
             "id": "burrito",
