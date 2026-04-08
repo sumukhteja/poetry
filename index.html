@@ -894,6 +894,20 @@
       } else {
         backToTopBtn.classList.remove('visible');
       }
+
+      // Hide mobile toggles after hero
+      if (window.innerWidth <= 600) {
+        const header = document.querySelector('header');
+        if (scrollCurrent > header.offsetHeight) {
+          themeToggle.classList.add('scrolled');
+          const aToggle = document.getElementById('audio-toggle');
+          if (aToggle) aToggle.classList.add('scrolled');
+        } else {
+          themeToggle.classList.remove('scrolled');
+          const aToggle = document.getElementById('audio-toggle');
+          if (aToggle) aToggle.classList.remove('scrolled');
+        }
+      }
     };
 
     backToTopBtn.onclick = () => {
