@@ -425,6 +425,52 @@
       color: #ffb6c1;
     }
 
+    /* Light Blue Special Card Styling */
+    .poem-card.lightblue-special {
+      background: #f0f7ff;
+      border-color: rgba(135, 190, 240, 0.4);
+      box-shadow: 0 10px 30px rgba(135, 190, 240, 0.1);
+    }
+
+    .poem-card.lightblue-special .envelope-flap {
+      background: #f4f9ff;
+      border-color: rgba(135, 190, 240, 0.6);
+      filter: drop-shadow(0 2px 2px rgba(135, 190, 240, 0.2));
+    }
+
+    .poem-card.lightblue-special .envelope-flap::after {
+      background: linear-gradient(180deg, rgba(135, 190, 240, 0.1) 0%, transparent 50%);
+    }
+
+    .poem-card.lightblue-special .poem-card-inner {
+      background: transparent;
+    }
+
+    .poem-card.lightblue-special h2 {
+      color: #5a9abf;
+      font-weight: 500;
+    }
+
+    [data-theme="dark"] .poem-card.lightblue-special {
+      background: #141d26;
+      border-color: rgba(135, 190, 240, 0.2);
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+    }
+
+    [data-theme="dark"] .poem-card.lightblue-special .envelope-flap {
+      background: #1a2530;
+      border-color: rgba(135, 190, 240, 0.3);
+      filter: drop-shadow(0 2px 3px rgba(135, 190, 240, 0.1));
+    }
+
+    [data-theme="dark"] .poem-card.lightblue-special .envelope-flap::after {
+      background: linear-gradient(180deg, rgba(135, 190, 240, 0.05) 0%, transparent 50%);
+    }
+
+    [data-theme="dark"] .poem-card.lightblue-special h2 {
+      color: #87bef0;
+    }
+
     /* Pagination controls */
     .pagination {
       display: flex;
@@ -994,8 +1040,11 @@
           pageItems.forEach((poem, index) => {
             const card = document.createElement('article');
             card.className = 'poem-card';
-            if (poem.id === 'my-queen') {
+            if (poem.id === 'my-queen' || poem.theme === 'light-pink') {
               card.classList.add('queen-special');
+            }
+            if (poem.theme === 'light-blue') {
+              card.classList.add('lightblue-special');
             }
             card.style.animationDelay = `${index * 0.05}s`;
 
